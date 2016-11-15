@@ -1,0 +1,33 @@
+package jmind.redis.out;
+
+import java.nio.ByteBuffer;
+
+import jmind.redis.codec.RedisCodec;
+
+/**
+ * Key-value pair output.
+ *
+ * @param <K> Key type.
+ * @param <V> Value type.
+ *
+ * @author wbxie
+ */
+public class KeyValueOutput<K, V> extends CommandOut<K, V, KeyValue<K, V>> {
+    private K key;
+
+    public KeyValueOutput(RedisCodec<K, V> codec) {
+        super(codec, null);
+    }
+
+    @Override
+    public void set(ByteBuffer bytes) {
+        if (bytes != null) {
+            if (key == null) {
+                key = codec.decodeKey(bytes);
+            } else {
+                V value = codec.decodeValue(bytes);
+                output = new KeyValue<K, V>(key, value);
+            }
+        }
+    }
+}

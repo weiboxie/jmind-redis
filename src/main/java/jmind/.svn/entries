@@ -1,0 +1,31 @@
+10
+
+dir
+3595
+http://192.168.75.92/svn/server/service/jmind/jmind-redis/src/main/java/jmind
+http://192.168.75.92/svn/server
+
+
+
+2014-04-03T07:54:14.082848Z
+3595
+xiewb
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+1a6de442-fa86-11e2-8a9a-d14f3ef03ad4
+
+redis
+dir
+

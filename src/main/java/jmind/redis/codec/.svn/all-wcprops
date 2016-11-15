@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/server/!svn/ver/3595/service/jmind/jmind-redis/src/main/java/jmind/redis/codec
+END
+RedisCodec.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/server/!svn/ver/3595/service/jmind/jmind-redis/src/main/java/jmind/redis/codec/RedisCodec.java
+END
+Base16.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/server/!svn/ver/3595/service/jmind/jmind-redis/src/main/java/jmind/redis/codec/Base16.java
+END
+Utf8Codec.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/server/!svn/ver/3595/service/jmind/jmind-redis/src/main/java/jmind/redis/codec/Utf8Codec.java
+END
