@@ -1,10 +1,5 @@
 package jmind.redis;
 
-import java.net.InetSocketAddress;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.*;
-
 import jmind.core.lang.shard.LoadBalance.Balance;
 import jmind.core.util.AddrUtil;
 import jmind.redis.codec.Utf8Codec;
@@ -13,7 +8,6 @@ import jmind.redis.protocol.CommandHandler;
 import jmind.redis.protocol.RedisWatchdog;
 import jmind.redis.pubsub.PubSubCommandHandler;
 import jmind.redis.pubsub.RedisPubSub;
-
 import org.jboss.netty.bootstrap.ClientBootstrap;
 import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelFuture;
@@ -26,6 +20,10 @@ import org.jboss.netty.channel.socket.ClientSocketChannelFactory;
 import org.jboss.netty.channel.socket.nio.NioClientSocketChannelFactory;
 import org.jboss.netty.util.HashedWheelTimer;
 import org.jboss.netty.util.Timer;
+
+import java.net.InetSocketAddress;
+import java.util.List;
+import java.util.concurrent.*;
 
 /**
  * 
@@ -48,7 +46,7 @@ public class RedisBootstrap {
     public RedisBootstrap(String hosts, int timeout) {
        this.timeout = timeout;
         addrs = AddrUtil.getAddress(hosts);
-        ExecutorService connectors = Executors.newFixedThreadPool(addrs.size());
+        ExecutorService connectors = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() * 2);
         ExecutorService workers = Executors.newCachedThreadPool();
         ClientSocketChannelFactory factory = new NioClientSocketChannelFactory(connectors, workers);
         bootstrap = new ClientBootstrap(factory);
