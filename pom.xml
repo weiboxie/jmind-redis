@@ -28,7 +28,6 @@
             <groupId>jmind</groupId>
             <artifactId>jmind-core</artifactId>
         </dependency>
-
     </dependencies>
 
 

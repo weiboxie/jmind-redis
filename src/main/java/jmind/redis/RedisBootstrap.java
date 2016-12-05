@@ -74,6 +74,9 @@ public class RedisBootstrap {
 
         }else if(balance==Balance.Time33){
             return new Time33RedisCmd<String,String>(redis);
+        }else if(balance==Balance.RoundRobin){
+            // 轮询模式，只有对于允许轮询的复杂均衡有效
+            return new RoundRobinRedisCmd<String,String>(redis);
         }
         return new RedisCmd<String, String>(redis);
 
