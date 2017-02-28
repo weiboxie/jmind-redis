@@ -2,7 +2,7 @@ package jmind.redis;
 
 import java.util.List;
 
-import jmind.core.lang.shard.RoundRobinLoadBalance;
+import jmind.base.lang.shard.RoundRobinLoadBalance;
 
 /**
  * 轮询负载均衡

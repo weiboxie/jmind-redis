@@ -4,7 +4,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
-import jmind.core.lang.ScoreValue;
+import jmind.base.lang.ScoreValue;
 import jmind.redis.codec.RedisCodec;
 
 /**

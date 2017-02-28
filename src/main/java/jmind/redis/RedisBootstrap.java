@@ -1,7 +1,8 @@
 package jmind.redis;
 
-import jmind.core.lang.shard.LoadBalance.Balance;
-import jmind.core.util.AddrUtil;
+
+import jmind.base.lang.shard.LoadBalance;
+import jmind.base.util.AddrUtil;
 import jmind.redis.codec.Utf8Codec;
 import jmind.redis.protocol.Command;
 import jmind.redis.protocol.CommandHandler;
@@ -58,11 +59,11 @@ public class RedisBootstrap {
     }
 
     public RedisCmd<String, String> connectAsync() {
-        return connectAsync(Balance.Hash);
+        return connectAsync(LoadBalance.Balance.Hash);
 
     }
 
-    public RedisCmd<String, String> connectAsync(Balance balance) {
+    public RedisCmd<String, String> connectAsync(LoadBalance.Balance balance) {
         List<RedisHandler<String, String>> redis = new CopyOnWriteArrayList<RedisHandler<String, String>>();
         for (InetSocketAddress address : addrs) {
             RedisHandler<String, String> handler = connectAsync(address);
@@ -72,9 +73,9 @@ public class RedisBootstrap {
         if (redis.size() == 1) {
             return new SingleRedisCmd<String, String>(redis);
 
-        }else if(balance==Balance.Time33){
+        }else if(balance== LoadBalance.Balance.Time33){
             return new Time33RedisCmd<String,String>(redis);
-        }else if(balance==Balance.RoundRobin){
+        }else if(balance== LoadBalance.Balance.RoundRobin){
             // 轮询模式，只有对于允许轮询的复杂均衡有效
             return new RoundRobinRedisCmd<String,String>(redis);
         }

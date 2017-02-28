@@ -1,8 +1,8 @@
 package jmind.redis;
 
-import jmind.core.algo.HashAlgorithms;
-import jmind.core.lang.shard.RoundRobinLoadBalance;
-import jmind.core.lang.shard.Time33HashLoadBalance;
+import jmind.base.algo.HashAlgorithms;
+import jmind.base.lang.shard.RoundRobinLoadBalance;
+import jmind.base.lang.shard.Time33HashLoadBalance;
 
 import java.util.List;
 

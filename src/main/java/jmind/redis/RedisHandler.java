@@ -37,7 +37,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import jmind.core.lang.ScoreValue;
+import jmind.base.lang.ScoreValue;
 import jmind.redis.codec.Base16;
 import jmind.redis.codec.RedisCodec;
 import jmind.redis.out.BooleanListOutput;

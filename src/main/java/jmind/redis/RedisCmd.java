@@ -1,8 +1,8 @@
 package jmind.redis;
 
-import jmind.core.lang.ScoreValue;
-import jmind.core.lang.shard.ConsistentHashLoadBalance;
-import jmind.core.lang.shard.LoadBalance;
+import jmind.base.lang.ScoreValue;
+import jmind.base.lang.shard.ConsistentHashLoadBalance;
+import jmind.base.lang.shard.LoadBalance;
 import jmind.redis.out.CommandOut;
 import jmind.redis.out.SortArgs;
 import jmind.redis.protocol.Command;
