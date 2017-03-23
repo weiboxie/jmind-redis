@@ -130,6 +130,7 @@ public class RedisBootstrap {
 
             bootstrap.setPipeline(pipeline);
             ChannelFuture future = bootstrap.connect(address);
+
             future.await();
             if (!future.isSuccess()) {
                 future.getCause().printStackTrace();
