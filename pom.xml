@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
-        <groupId>jmind</groupId>
+        <groupId>net.oschina.jmind</groupId>
         <artifactId>jmind-parent-pom</artifactId>
-        <version>6.0.0-SNAPSHOT</version>
+        <version>2.0.0-SNAPSHOT</version>
     </parent>
     <!-- compile 默认的scope，表示 dependency 都可以在生命周期中使用。而且，这些dependencies 会传递到依赖的项目中。适用于所有阶段，会随着项目一起发布
         provided 跟compile相似，但是表明了dependency 由JDK或者容器提供，例如Servlet AP和一些Java EE APIs。这个scope
@@ -14,7 +14,6 @@
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>jmind-redis</artifactId>
-    <version>3.0.0-SNAPSHOT</version>
     <name>jmind-redis</name>
     <packaging>jar</packaging>
 
@@ -25,7 +24,7 @@
             <artifactId>netty</artifactId>
         </dependency>
         <dependency>
-            <groupId>jmind</groupId>
+            <groupId>net.oschina.jmind</groupId>
             <artifactId>jmind-base</artifactId>
         </dependency>
 
